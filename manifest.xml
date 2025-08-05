@@ -20,7 +20,7 @@
   </Requirements>
   <Resources>
     <bt:Urls xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
-      <bt:Url id="TaskPaneUrl" DefaultValue="https://yourusername.github.io/outlook-html-injector/taskpane.html"/>
+      <bt:Url id="TaskPaneUrl" DefaultValue="https://dhpatel548.github.io/outlook-html-injector/taskpane.html"/>
     </bt:Urls>
   </Resources>
   <ExtensionPoint xsi:type="MessageComposeCommandSurface">
