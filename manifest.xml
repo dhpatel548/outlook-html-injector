@@ -1,0 +1,55 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="MessageCompose">
+  <Id>9bfe00f9-1111-4c90-833b-1111bbee5555</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Custom Add-in</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName>HTML Injector</DisplayName>
+  <Description>Inject Custom HTML into Email</Description>
+  <IconUrl DefaultValue="https://via.placeholder.com/64"/>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+  <Resources>
+    <bt:Urls xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+      <bt:Url id="TaskPaneUrl" DefaultValue="https://yourusername.github.io/outlook-html-injector/taskpane.html"/>
+    </bt:Urls>
+  </Resources>
+  <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+    <OfficeTab id="TabDefault">
+      <Group id="msgComposeGroup">
+        <Label resid="groupLabel"/>
+        <Control xsi:type="Button" id="btnHTMLInject">
+          <Label resid="buttonLabel"/>
+          <Supertip>
+            <Title resid="buttonLabel"/>
+            <Description resid="buttonDescription"/>
+          </Supertip>
+          <Icon>
+            <bt:Image id="Icon"/>
+          </Icon>
+          <Action xsi:type="ShowTaskpane">
+            <SourceLocation resid="TaskPaneUrl"/>
+          </Action>
+        </Control>
+      </Group>
+    </OfficeTab>
+  </ExtensionPoint>
+  <VersionOverrides V1_0="1.0.0.0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0">
+    <Resources>
+      <bt:Strings>
+        <bt:String id="groupLabel" DefaultValue="HTML Tools"/>
+        <bt:String id="buttonLabel" DefaultValue="Inject HTML"/>
+        <bt:String id="buttonDescription" DefaultValue="Paste HTML and inject it into your email."/>
+      </bt:Strings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
